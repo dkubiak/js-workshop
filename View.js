@@ -1,14 +1,25 @@
 'use strict';
 
-const View = {
-    renderProducts (model, $target){
-        const products = model.getProducts();
+class View {
+    constructor(model) {
+        this.model = model;
+        this.ele = document.createElement('div');
+    }
+
+    renderProducts() {
+        const products = this.model.getProducts();
+
+        var $title = document.createElement('h2');
+        $title.className = 'products__title';
+        $title.appendChild(document.createTextNode(this.productsTitle))
+
+        this.ele.appendChild($title)
 
         for (var idx in products) {
-            const $product = View._renderProduct(products[idx]);
-            $target.appendChild($product);
+            const $product = this._renderProduct(products[idx]);
+            this.ele.appendChild($product);
         }
-    },
+    }
 
     _renderProduct(product) {
         var $product = document.createElement('div');
@@ -45,6 +56,28 @@ const View = {
 
         return $product;
     }
-};
+
+    render($target) {
+        $target.appendChild(this.ele);
+        this.renderProducts();
+    }
+}
+
+class ViewPremium extends View {
+    constructor(model) {
+        super(model);
+        this.ele.className = 'products special';
+        this.productsTitle = 'Special';
+    }
+}
+
+class ViewStandard extends View {
+    constructor(model) {
+        super(model);
+        this.ele.className = 'products standard';
+        this.productsTitle = 'Standard';
+    }
+}
+
 
 

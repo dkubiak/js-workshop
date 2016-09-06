@@ -1,7 +1,7 @@
-body {
-    display: flex;
-    justify-content: center;
-}
+/*body {*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+/*}*/
 
 @keyframes fadeIn {
     from {
@@ -36,6 +36,11 @@ body {
     align-items: center;
     padding-top: 15px;
     /*flex: 0 0 1000px;*/
+}
+
+.special {
+    background: #bca733;
+    display: flex;
 }
 
 .product {
