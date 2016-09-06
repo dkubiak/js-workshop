@@ -1,6 +1,4 @@
-'use strict';
-
-class Products {
+export class Products {
     constructor(products) {
         this.products = products;
     }
@@ -10,7 +8,7 @@ class Products {
     }
 }
 
-const Model = {
+export const Model = {
     standardProducts: [
         {
             id: 1,

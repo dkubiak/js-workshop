@@ -1,5 +1,3 @@
-'use strict';
-
 class View {
     constructor(model) {
         this.model = model;
@@ -63,7 +61,7 @@ class View {
     }
 }
 
-class ViewPremium extends View {
+export class ViewPremium extends View {
     constructor(model) {
         super(model);
         this.ele.className = 'products special';
@@ -71,7 +69,7 @@ class ViewPremium extends View {
     }
 }
 
-class ViewStandard extends View {
+export class ViewStandard extends View {
     constructor(model) {
         super(model);
         this.ele.className = 'products standard';
